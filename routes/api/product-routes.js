@@ -1,5 +1,9 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
+//use include statement 
+//similar to the way we did it in the miniproject
+//special include method here
+
 
 // The `/api/products` endpoint
 
