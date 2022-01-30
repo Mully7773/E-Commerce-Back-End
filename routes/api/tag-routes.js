@@ -28,15 +28,50 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/', (req, res) => {
-  // create a new tag
+  Tag.create({
+    tag_name: req.body.tag_name
+  })  //must be an object
+  .then((newTag) => {
+    res.json(newTag);
+  })
+  .catch((err) => {
+    res.json(err);
+  });
 });
+  // create a new tag
+
 
 router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
+  Tag.update(
+    {
+        tag_name: req.body.tag_name
+    },
+    {
+      where: {
+        id: req.params.id
+      },
+    }
+  )
+  .then((updatedTag) => {
+    res.json(updatedTag);
+  })
+  .catch((err) => res.json(err));
 });
+  // update a tag's name by its `id` value
+
 
 router.delete('/:id', (req, res) => {
+  Tag.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((deletedTag) => {
+      res.json(deletedTag);
+    })
+    .catch((err) => res.json(err));
+  });
   // delete on tag by its `id` value
-});
+
 
 module.exports = router;
