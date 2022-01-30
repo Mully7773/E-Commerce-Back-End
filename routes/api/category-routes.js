@@ -28,7 +28,8 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', (req, res) => {
   Category.create({
-    category_name: req.body.category_name})
+    category_name: req.body.category_name
+  })  //must be an object
   .then((newCategory) => {
     res.json(newCategory);
   })
