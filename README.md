@@ -24,6 +24,7 @@ It is also necessary to run `npm run seed` in order to acquire the starter data.
 The application is invoked by running `node server.js` in the command line via the server.js terminal.
 
 * [Video Demo]
+https://watch.screencastify.com/v/aUwrIIiZIqhbbIO13TbQ
 
 * Screenshot:
 ![Screenshot of Insomnia tests](./assets/S0.png)
